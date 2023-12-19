@@ -1,7 +1,7 @@
 import { ErrorHandler, Injectable } from '@angular/core';
 
 import { Hero } from './hero';
-import { Observable, catchError, of, tap } from 'rxjs';
+import { Observable, catchError, lastValueFrom, of, tap } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class HeroService {
  
-  private heroesUrl = 'api/heroes';  // URL to web api
+  private heroesUrl : string = 'api/heroes';  // URL to web api
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   }
