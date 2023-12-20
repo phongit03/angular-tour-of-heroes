@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Observable, Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
@@ -17,6 +17,9 @@ export class HeroSearchComponent implements OnInit{
   constructor(private heroService: HeroService) {
 
   }
+
+
+
   
   ngOnInit(): void {
     this.heroes = this.searchTerms.pipe(

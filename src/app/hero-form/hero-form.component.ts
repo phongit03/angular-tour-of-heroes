@@ -7,12 +7,12 @@ import { Hero } from '../models/hero_model';
   styleUrls: ['./hero-form.component.css']
 })
 export class HeroFormComponent {
-  powers = ['Really Smart', 'Super Flexible',
+  powers: string[] = ['Really Smart', 'Super Flexible',
   'Super Hot', 'Weather Changer'];
 
-  model = new Hero(18, 'Dr. IQ', this.powers[0], 'Chuck Overstreet');
+  model: Hero = new Hero(18, 'Dr. IQ', this.powers[0], 'Chuck Overstreet');
 
-  submitted = false;
+  submitted: boolean = false;
 
   onSubmit() { this.submitted = true; }
 
